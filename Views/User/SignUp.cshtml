@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up - KhumaloCraft Emporium</title>
+    <style>
+        body {
+            background-color: #1b2f48;
+            color: #FFFDD0;
+        }
+
+        .craftwork-item {
+            border-radius: 25px;
+            background-color: #1b2f48;
+            padding: 15px;
+            border: 5px solid #FFFDD0;
+            color: #FFFDD0;
+            max-width: 350px;
+            margin: auto;
+        }
+
+            .craftwork-item input {
+                display: block;
+                width: 100%;
+                margin-bottom: 10px;
+                padding: 5px;
+                border-radius: 5px;
+                border: 1px solid #FFFDD0;
+            }
+
+            .craftwork-item button {
+                width: 100%;
+                padding: 10px;
+                border-radius: 5px;
+                border: solid;
+                border-color: #FFFDD0;
+                background-color: #333;
+                color: #1b2f48;
+                cursor: pointer;
+            }
+    </style>
+</head>
+
+<body>
+    <div style="height:80px;"></div>
+    <h1 align="center" style="color: #FFFDD0">Sign Up With KhumaloCraft</h1>
+    <hr style="height:3px;color:#FFFDD0;border-width:0">
+    <div style="height:10px;"></div>
+    <p align="center">Please create a secure KhumaloCraft account by entering your firstname, lastname, email, and a secure password below.</p>
+    <div style="height:30px;"></div>
+
+        <div class="craftwork-item">
+            <form action="Login" method="post">
+                <input type="text" name="FirstName" placeholder="FirstName" required>
+                <input type="text" name="LastName" placeholder="LastName" required>
+                <input type="text" name="Email" placeholder="example@gmail.com" required>
+                <input type="password" name="Password" placeholder="Ex@mpl3s" required>
+            <button style="color: #FFFDD0" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
