@@ -16,7 +16,7 @@ namespace ST10256859_CLDV6211_POE.Models
 
         public string Password { get; set; }
 
-        public int insertUser(userTBL u)
+        public int InsertUser(userTBL u)
         {
             try
             {
@@ -30,6 +30,31 @@ namespace ST10256859_CLDV6211_POE.Models
                 int rowsAffected = cmd.ExecuteNonQuery();
                 con.Close();
                 return rowsAffected;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public string GetFullName(int userID)
+        {
+            SqlConnection testCon = new SqlConnection(con_string);
+
+            try
+            {
+                string sql = "SELECT FirstName, LastName FROM UserTBL WHERE UserID = @UserID";
+                SqlCommand cmd = new SqlCommand(sql, testCon);
+                cmd.Parameters.AddWithValue("@UserID", userID);
+                testCon.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    FirstName = reader["FirstName"].ToString();
+                    LastName = reader["LastName"].ToString();
+                }
+                testCon.Close();
+                return FirstName + " " + LastName;
             }
             catch (Exception ex)
             {

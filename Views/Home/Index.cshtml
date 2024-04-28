@@ -1,6 +1,6 @@
 ﻿@model int
 @{
-
+    var WelcomeMessage = ViewData["WelcomeMessage"];
     var userID = ViewData["userID"];
 }
 <!DOCTYPE html>
@@ -102,7 +102,11 @@
                 <p>Your destination for exquisite handmade ceramics</p>
                 @if (userID != null)
                 {
-                    <p>Welcome </p>
+                    var welcomeMessage = ViewData["WelcomeMessage"] as string;
+                    if (!string.IsNullOrEmpty(welcomeMessage))
+                    {
+                        <h2>@welcomeMessage</h2>
+                    }
                 }
             </div>
         </div>

@@ -17,18 +17,23 @@ namespace ST10256859_CLDV6211_POE_Part1.Controllers
         public IActionResult Index()
         {
             int? UserID = HttpContext.Session.GetInt32("UserID");
-            if (UserID.HasValue)
-            {
-                List<productTBL> products = productTBL.GetAllProducts();
-
-                ViewData["UserID"] = UserID.Value;
-
-                return View();
-            }
-            else
+            if (!UserID.HasValue)
             {
                 return View();
             }
+            userTBL user = new userTBL();
+            string FullName = user.GetFullName((int)UserID);
+
+            if (!string.IsNullOrEmpty(FullName))
+            {
+                ViewData["WelcomeMessage"] = $"Welcome, {FullName}!";
+            }
+
+            List<productTBL> products = productTBL.GetAllProducts();
+
+            ViewData["UserID"] = UserID.Value;
+
+            return View();
         }
 
         public IActionResult AboutUs()

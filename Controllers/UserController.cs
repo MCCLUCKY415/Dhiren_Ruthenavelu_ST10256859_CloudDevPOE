@@ -10,7 +10,7 @@ namespace ST10256859_CLDV6211_POE.Controllers
         [HttpPost]
         public ActionResult SignUp(userTBL Users)
         {
-            var result = usrTBL.insertUser(Users);
+            var result = usrTBL.InsertUser(Users);
             return RedirectToAction("Login", "User");
         }
 

@@ -13,13 +13,16 @@ namespace ST10256859_CLDV6211_POE.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login(string email, string password)
+        public ActionResult Login(string email, string password, string name, string surname)
         {
             var loginModel = new LoginModel();
             int UserID = loginModel.SelectUser(email, password);
             if (UserID != -1)
             {
                 HttpContext.Session.SetInt32("UserID", UserID);
+
+                TempData["Name"] = name;
+                TempData["Surname"] = surname;
 
                 return RedirectToAction("Index", "Home");
             }
