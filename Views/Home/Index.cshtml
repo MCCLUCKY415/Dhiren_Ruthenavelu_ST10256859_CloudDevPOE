@@ -1,9 +1,15 @@
-﻿<!DOCTYPE html>
+﻿@model int
+@{
+
+    var userID = ViewData["userID"];
+}
+<!DOCTYPE html>
 <html>
 <head>
     <title>Home - KhumaloCraft Emporium</title>
     <style>
-        body {
+        body 
+        {
             background: url('/images/scroll.png');
             font-family: Optician Sans;
             font-size: 18px;
@@ -11,14 +17,16 @@
             margin: 0;
         }
 
-        .header-block-container {
+        .header-block-container 
+        {
             width: 50%;
             padding: 20px;
             float: left;
             box-sizing: border-box;
         }
 
-        .header-block {
+        .header-block 
+        {
             border: 3px solid #1b2f48;
             padding: 60px;
             text-align: center;
@@ -30,11 +38,13 @@
             box-sizing: border-box;
         }
 
-        header h1, header p {
+        header h1, header p 
+        {
             margin: 0;
         }
 
-        .slideshow-container {
+        .slideshow-container 
+        {
             width: 50%;
             float: right;
             height: 400px;
@@ -42,14 +52,16 @@
             position: relative;
         }
 
-        .slideshow {
+        .slideshow 
+        {
             width: 100%;
             height: 100%;
             position: relative;
             overflow: hidden;
         }
 
-        .mySlides {
+        .mySlides 
+        {
             padding: 10px;
             width: 700px;
             height: 700px;
@@ -60,18 +72,22 @@
             left: 0;
         }
 
-            .mySlides img {
+            .mySlides img 
+            {
                 width: 100%;
                 height: auto;
             }
 
-        .fade-in {
+        .fade-in 
+        {
             opacity: 1;
         }
 
-        .fade-out {
+        .fade-out 
+        {
             opacity: 0;
         }
+
     </style>
 </head>
 
@@ -84,6 +100,10 @@
                 <h1><b>Welcome to KhumaloCraft Emporium</b></h1>
                 <div style="height:20px;"></div>
                 <p>Your destination for exquisite handmade ceramics</p>
+                @if (userID != null)
+                {
+                    <p>User ID: @userID</p>
+                }
             </div>
         </div>
         <div class="slideshow-container">
