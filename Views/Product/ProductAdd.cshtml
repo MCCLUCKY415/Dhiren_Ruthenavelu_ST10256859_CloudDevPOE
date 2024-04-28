@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Sign Up - KhumaloCraft Emporium</title>
+    <title>Adding Products - KhumaloCraft Emporium</title>
     <style>
         body {
             background-color: #1b2f48;
@@ -42,21 +42,24 @@
 
 <body>
     <div style="height:80px;"></div>
-    <h1 align="center" style="color: #FFFDD0">Sign Up With KhumaloCraft Emporium</h1>
+    <h1 align="center" style="color: #FFFDD0">Add Products to KhumaloCraft Emporium</h1>
     <hr style="height:3px;color:#FFFDD0;border-width:0">
     <div style="height:10px;"></div>
     <p align="center">Please create a secure KhumaloCraft account by entering your firstname, lastname, email, and a secure password below.</p>
     <div style="height:30px;"></div>
 
-        <div class="craftwork-item">
-            <form action="Login" method="post">
-                <input type="text" name="FirstName" placeholder="FirstName" required>
-                <input type="text" name="LastName" placeholder="LastName" required>
-                <input type="text" name="Email" placeholder="example@gmail.com" required>
-                <input type="password" name="Password" placeholder="Ex@mpl3s" required>
+    <div class="craftwork-item">
+        <form action="ProductAdd" method="post">
+            <input type="text" name="Name" placeholder="Name of the Product" required>
+            <input type="text" name="Category" placeholder="Category of the Product" required>
+            <input type="text" name="Description" placeholder="Description of the Product" required>
+            <input type="text" name="Price" placeholder="Price of the Product" required>
+            <input type="text" name="Quantity" placeholder="Quantity of the Product" required>
+            <input type="text" name="Availability" placeholder="Availability of the Product" required>
             <button style="color: #FFFDD0" type="submit">Submit</button>
-            </form>
-        </div>
+        </form>
+    </div>
     </div>
 </body>
 </html>
+

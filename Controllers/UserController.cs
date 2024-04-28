@@ -5,7 +5,7 @@ namespace ST10256859_CLDV6211_POE.Controllers
 {
     public class UserController : Controller
     {
-        userTBL usrTBL = new userTBL();
+        private userTBL usrTBL = new userTBL();
 
         [HttpPost]
         public ActionResult SignUp(userTBL Users)
@@ -15,12 +15,12 @@ namespace ST10256859_CLDV6211_POE.Controllers
         }
 
         [HttpGet]
-        public IActionResult SignUp()
+        public ActionResult SignUp()
         {
             return View();
         }
 
-        public IActionResult Login()
+        public ActionResult Login()
         {
             return View();
         }

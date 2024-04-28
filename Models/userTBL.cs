@@ -20,7 +20,7 @@ namespace ST10256859_CLDV6211_POE.Models
         {
             try
             {
-                string sql = "INSERT INTO userTBL (FirstName, LastName, Email, UserPassword) VALUES (@Name, @Surname, @Email, @Password)";
+                string sql = "INSERT INTO UserTBL (FirstName, LastName, Email, UserPassword) VALUES (@Name, @Surname, @Email, @Password)";
                 SqlCommand cmd = new SqlCommand(sql, con);
                 cmd.Parameters.AddWithValue("@Name", u.FirstName);
                 cmd.Parameters.AddWithValue("@Surname", u.LastName);
