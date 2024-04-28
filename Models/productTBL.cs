@@ -16,11 +16,11 @@ namespace ST10256859_CLDV6211_POE.Models
 
         public string Description { get; set; }
 
-        public string Price { get; set; }
+        public decimal Price { get; set; }
 
-        public string Quantity { get; set; }
+        public int Quantity { get; set; }
 
-        public string Availability { get; set; }
+        public bool Availability { get; set; }
 
         public int InsertProduct(productTBL p)
         {
@@ -33,6 +33,7 @@ namespace ST10256859_CLDV6211_POE.Models
                 cmd.Parameters.AddWithValue("@Description", p.Description);
                 cmd.Parameters.AddWithValue("@Price", p.Price);
                 cmd.Parameters.AddWithValue("@Quantity", p.Quantity);
+                p.Availability = p.Quantity > 0;
                 cmd.Parameters.AddWithValue("@Availability", p.Availability);
                 con.Open();
                 int rowsAffected = cmd.ExecuteNonQuery();
@@ -60,12 +61,12 @@ namespace ST10256859_CLDV6211_POE.Models
                 {
                     productTBL product = new productTBL();
                     product.ProductID = Convert.ToInt32(reader["productID"]);
-                    product.Name = reader["productName"].ToString();
-                    product.Category = reader["productCategory"].ToString();
-                    product.Description = reader["productDescription"].ToString();
-                    product.Price = reader["productPrice"].ToString();
-                    product.Quantity = reader["productQuantity"].ToString();
-                    product.Availability = reader["productAvailability"].ToString();
+                    product.Name = reader["Name"].ToString();
+                    product.Category = reader["ProductCategory"].ToString();
+                    product.Description = reader["Description"].ToString();
+                    product.Price = Convert.ToDecimal(reader["Price"]);
+                    product.Quantity = Convert.ToInt32(reader["Quantity"]);
+                    product.Availability = Convert.ToBoolean(reader["Availability"]);
                     products.Add(product);
                 }
             }

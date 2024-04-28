@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using ST10256859_CLDV6211_POE.Models;
 using ST10256859_CLDV6211_POE_Part1.Models;
 using System.Diagnostics;
 
@@ -13,8 +14,12 @@ namespace ST10256859_CLDV6211_POE_Part1.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int UserID)
         {
+            List<productTBL> products = productTBL.GetAllProducts();
+
+            ViewData["UserID"] = UserID;
+
             return View();
         }
 
