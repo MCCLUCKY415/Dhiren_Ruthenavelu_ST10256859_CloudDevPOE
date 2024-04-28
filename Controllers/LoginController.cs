@@ -19,12 +19,21 @@ namespace ST10256859_CLDV6211_POE.Controllers
             int UserID = loginModel.SelectUser(email, password);
             if (UserID != -1)
             {
-                return RedirectToAction("Index", "Home", new { UserID = UserID });
+                HttpContext.Session.SetInt32("UserID", UserID);
+
+                return RedirectToAction("Index", "Home");
             }
             else
             {
                 return View("LoginFailed");
             }
+        }
+
+        public ActionResult Logout()
+        {
+            Response.Cookies.Delete("UserID");
+
+            return RedirectToAction("Index", "Home");
         }
     }
 }

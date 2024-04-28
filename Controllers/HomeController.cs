@@ -14,13 +14,21 @@ namespace ST10256859_CLDV6211_POE_Part1.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index(int UserID)
+        public IActionResult Index()
         {
-            List<productTBL> products = productTBL.GetAllProducts();
+            int? UserID = HttpContext.Session.GetInt32("UserID");
+            if (UserID.HasValue)
+            {
+                List<productTBL> products = productTBL.GetAllProducts();
 
-            ViewData["UserID"] = UserID;
+                ViewData["UserID"] = UserID.Value;
 
-            return View();
+                return View();
+            }
+            else
+            {
+                return View();
+            }
         }
 
         public IActionResult AboutUs()
