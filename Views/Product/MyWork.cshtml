@@ -1,0 +1,77 @@
+﻿@model List<ST10256859_CLDV6211_POE.Models.productTBL>
+
+@{
+    ViewData["Title"] = "MyWork";
+    var userID = ViewData["userID"];
+}
+
+<!DOCTYPE html>
+<head>
+    <title>MyWork - KhumaloCraft Emporium</title>
+    <style>
+        .image
+        {
+            border-radius: 25px;
+            height: 320px;
+            width: 400px;
+            margin: 15px;
+            border: 5px solid #FFFDD0;
+        }
+
+        .craftwork-item
+        {
+            border-radius: 25px;
+            background-color: #1b2f48;
+            height: 380px;
+            width: auto;
+            padding: 15px;
+            border: 5px solid #FFFDD0;
+            color: #FFFDD0;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <div style="height:80px;"></div>
+        <h1 align="center" style="color: #FFFDD0">KhumaloCraft's Works</h1>
+        <hr style="height:3px;color:#FFFDD0;border-width:0">
+        <div style="height:10px;"></div>
+        <p align="center" style="color: #FFFDD0">
+            KhumaloCraft is a distinguished
+            pottery business dedicated to the art of crafting 
+            exquisite handmade ceramics. With a passion for 
+            tradition and innovation, we meticulously handcraft 
+            each piece, infusing it with timeless beauty and 
+            functional elegance. From intricately designed vases 
+            and dinnerware sets to unique decorative pieces, 
+            every creation reflects our commitment to quality 
+            craftsmanship and artistic expression. At KhumaloCraft, 
+            we invite you to experience the artistry and 
+            craftsmanship of our pottery, designed to elevate any 
+            space with its distinct charm and character. 
+            Below are just a few of our beautifully exquisite pieces:
+        </p>
+        <br></br>
+        <br></br>
+        @foreach(var product in Model)
+        {
+            <div class="craftwork-container">
+                <div class="craftwork-item">
+                    <img class="image" align="left" src="/images/FloralHarmony.jpg" alt="Floral Harmony Ceramic Set" />
+                    <br></br>
+                    <h2 align="middle"> @product.Name </h2>
+                    <div style="height:20px;"></div>
+                    <p><b> Description:</b> @product.Description </p>
+                    <p><b> Price:</b> R @product.Price </p>
+                    <p><b> Catergory:</b> @product.Category </p>
+                    <p><b> Quantity:</b> @product.Quantity </p>
+                </div>
+            </div>
+            <br></br>
+            <br></br>
+        } 
+    </div>
+</body>
+</html>

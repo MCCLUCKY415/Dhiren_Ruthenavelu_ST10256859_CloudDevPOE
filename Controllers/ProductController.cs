@@ -11,13 +11,21 @@ namespace ST10256859_CLDV6211_POE.Controllers
         public ActionResult ProductAdd(productTBL products)
         {
             var result2 = prodTBL.InsertProduct(products);
-            return RedirectToAction("MyWork", "Home");
+            return RedirectToAction("MyWork", "Product");
+        }
+
+        public ActionResult ProductGet(productTBL products)
+        {
+            var result = prodTBL.GetAllProducts();
+            return View("MyWork", result);
         }
 
         [HttpGet]
         public ActionResult MyWork()
         {
-            return View(prodTBL);
+            var products = prodTBL.GetAllProducts();
+            ViewData["UserID"] = HttpContext.Session.GetInt32("UserID");
+            return View(products);
         }
 
         public ActionResult ProductAdd()

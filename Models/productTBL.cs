@@ -46,7 +46,7 @@ namespace ST10256859_CLDV6211_POE.Models
             }
         }
 
-        public static List<productTBL> GetAllProducts()
+        public List<productTBL> GetAllProducts()
         {
             List<productTBL> products = new List<productTBL>();
 
