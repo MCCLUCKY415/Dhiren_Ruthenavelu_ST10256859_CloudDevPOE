@@ -47,19 +47,19 @@
     <div style="height:10px;"></div>
     <p align="center">Please fill in the details below to add your product to KhumaloCraft Emporium.</p>
     <div style="height:30px;"></div>
+        <div class="craftwork-item">
+            @model ST10256859_CLDV6211_POE.Models.productTBL
 
-    <div class="craftwork-item">
-        <form action="ProductAdd" method="post">
-            <input type="text" name="Name" placeholder="Name of the Product" required>
-            <input type="text" name="Category" placeholder="Category of the Product" required>
-            <input type="text" name="Description" placeholder="Description of the Product" required>
-            <input type="text" name="Price" placeholder="Price of the Product" required>
-            <input type="text" name="Quantity" placeholder="Quantity of the Product" required>
-            <input type="text" name="Availability" placeholder="Availability of the Product" required>
-            <button style="color: #FFFDD0" type="submit">Submit</button>
-        </form>
-    </div>
-    </div>
+            <form action="ProductAdd" method="post" enctype="multipart/form-data">
+                <input type="text" name="Name" placeholder="Name of the Product" required>
+                <input type="text" name="Category" placeholder="Category of the Product" required>
+                <input type="text" name="Description" placeholder="Description of the Product" required>
+                <input type="text" name="Price" placeholder="Price of the Product" required>
+                <input type="text" name="Quantity" placeholder="Quantity of the Product" required>
+                <input type="file" name="ImageFile" placeholder="Image of the Product">
+            <button type="submit" style="color: #FFFDD0">Submit</button>
+            </form>
+        </div>
     <br></br>
 </body>
 </html>

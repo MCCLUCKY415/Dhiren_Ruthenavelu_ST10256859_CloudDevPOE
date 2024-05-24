@@ -24,7 +24,7 @@ namespace ST10256859_CLDV6211_POE.Controllers
                 TempData["Name"] = name;
                 TempData["Surname"] = surname;
 
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("MyWork", "Product");
             }
             else
             {

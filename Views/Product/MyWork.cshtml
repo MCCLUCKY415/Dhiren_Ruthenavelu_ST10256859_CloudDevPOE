@@ -1,5 +1,4 @@
 ﻿@model List<ST10256859_CLDV6211_POE.Models.productTBL>
-
 @{
     ViewData["Title"] = "MyWork";
     var userID = ViewData["userID"];
@@ -22,13 +21,28 @@
         {
             border-radius: 25px;
             background-color: #1b2f48;
-            height: 380px;
+            height: auto;
             width: auto;
             padding: 15px;
             border: 5px solid #FFFDD0;
             color: #FFFDD0;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
         }
 
+        .craftwork-content
+        {
+            display: flex;
+            align-items: center;
+        }
+
+        .text-content
+        {
+            width: 970px;
+            margin-left: 15px;
+            overflow-wrap: break-word;
+        }
     </style>
 </head>
 
@@ -55,23 +69,27 @@
         </p>
         <br></br>
         <br></br>
-        @foreach(var product in Model)
+        @foreach (var product in Model)
         {
             <div class="craftwork-container">
                 <div class="craftwork-item">
-                    <img class="image" align="left" src="/images/FloralHarmony.jpg" alt="Floral Harmony Ceramic Set" />
-                    <br></br>
-                    <h2 align="middle"> @product.Name </h2>
-                    <div style="height:20px;"></div>
-                    <p><b> Description:</b> @product.Description </p>
-                    <p><b> Price:</b> R @product.Price </p>
-                    <p><b> Catergory:</b> @product.Category </p>
-                    <p><b> Quantity:</b> @product.Quantity </p>
+                    <div class="craftwork-content" >
+                        <img class="image" src="@product.ImageUrl"></img>
+                        <div class="text-content">
+                            <div style="height:30px;"></div>
+                            <h2 align="middle">@product.Name</h2>
+                            <div style="height:20px;"></div>
+                            <p><b> Category:</b> @product.Category </p>
+                            <p><b> Description:</b> @product.Description </p>
+                            <p><b> Price:</b> R @product.Price </p>
+                            <p><b> Quantity:</b> @product.Quantity </p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <br></br>
             <br></br>
-        } 
+        }
     </div>
 </body>
 </html>

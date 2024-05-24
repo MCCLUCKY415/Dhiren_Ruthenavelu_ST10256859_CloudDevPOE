@@ -16,8 +16,6 @@ namespace ST10256859_CLDV6211_POE_Part1.Controllers
 
         public IActionResult Index()
         {
-            productTBL product = new productTBL();
-
             int? UserID = HttpContext.Session.GetInt32("UserID");
             if (!UserID.HasValue)
             {
@@ -30,8 +28,6 @@ namespace ST10256859_CLDV6211_POE_Part1.Controllers
             {
                 ViewData["WelcomeMessage"] = $"Welcome, {FullName}!";
             }
-
-            List<productTBL> products = product.GetAllProducts();
 
             ViewData["UserID"] = UserID.Value;
 
