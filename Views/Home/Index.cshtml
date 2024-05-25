@@ -100,14 +100,6 @@
                 <h1><b>Welcome to KhumaloCraft Emporium</b></h1>
                 <div style="height:20px;"></div>
                 <p>Your destination for exquisite handmade ceramics</p>
-                @if (userID != null)
-                {
-                    var welcomeMessage = ViewData["WelcomeMessage"] as string;
-                    if (!string.IsNullOrEmpty(welcomeMessage))
-                    {
-                        <h2>@welcomeMessage</h2>
-                    }
-                }
             </div>
         </div>
         <div class="slideshow-container">

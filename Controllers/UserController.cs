@@ -24,5 +24,12 @@ namespace ST10256859_CLDV6211_POE.Controllers
         {
             return View();
         }
+
+        public ActionResult Profile()
+        {
+            int? UserID = HttpContext.Session.GetInt32("UserID");
+            userTBL user = usrTBL.UserDetails((int)UserID);
+            return View(user);
+        }
     }
 }

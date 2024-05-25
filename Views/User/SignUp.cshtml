@@ -37,25 +37,42 @@
                 color: #1b2f48;
                 cursor: pointer;
             }
+
+            .craftwork-item button[name="LoginButton"] {
+                    width: auto;
+                    padding: 1px;
+                    border: solid;
+                    border-color: #1b2f48;
+                    background-color: #1b2f48;
+                    color: #fff;
+                    cursor: pointer;
+                    text-align: center;
+            }
     </style>
 </head>
 
 <body>
-    <div style="height:80px;"></div>
-    <h1 align="center" style="color: #FFFDD0">Sign Up</h1>
-    <hr style="height:3px;color:#FFFDD0;border-width:0">
-    <div style="height:10px;"></div>
-    <p align="center">Please create a secure KhumaloCraft account by entering your firstname, lastname, email, and a secure password below.</p>
-    <div style="height:30px;"></div>
-        <div class="craftwork-item">
-            <form action="SignUp" method="post">
-                <input type="text" name="FirstName" placeholder="FirstName" required>
-                <input type="text" name="LastName" placeholder="LastName" required>
-                <input type="text" name="Email" placeholder="example@gmail.com" required>
-                <input type="password" name="Password" placeholder="Ex@mpl3s" required>
-            <button style="color: #FFFDD0" type="submit">Submit</button>
-            </form>
-        </div>
+    <div style="height:55px"></div>
+    <div class="craftwork-item">
+        <h1 align="center" style="color: #FFFDD0">Sign Up</h1>
+        <div style="height:20px;"></div>
+        <form action="SignUp" method="post">
+            <input type="text" name="FirstName" placeholder="Name" required>
+            <div style="height:20px;"></div>
+            <input type="text" name="LastName" placeholder="Surname" required>
+            <div style="height:20px;"></div>
+            <input type="text" name="Email" placeholder="Email" required>
+            <div style="height:20px;"></div>
+            <input type="password" name="Password" placeholder="Password" required>
+            <div style="height:20px;"></div>
+            <button style="color: #FFFDD0" type="submit">Sign Up</button>
+            <div style="height:20px;"></div>
+        </form>
+        <form asp-controller="User" asp-action="Login" method="get">
+            <div align="center">
+                <button style="color: #FFFDD0" type="submit" name="LoginButton"><u>Login</u></button>
+            </div>
+        </form>
     </div>
 </body>
 </html>

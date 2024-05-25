@@ -61,5 +61,31 @@ namespace ST10256859_CLDV6211_POE.Models
                 throw ex;
             }
         }
+
+        public userTBL UserDetails(int userID)
+        {
+            SqlConnection testCon = new SqlConnection(con_string);
+
+            try
+            {
+                string sql = "SELECT FirstName, LastName, Email FROM UserTBL WHERE UserID = @UserID";
+                SqlCommand cmd = new SqlCommand(sql, testCon);
+                cmd.Parameters.AddWithValue("@UserID", userID);
+                testCon.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    FirstName = reader["FirstName"].ToString();
+                    LastName = reader["LastName"].ToString();
+                    Email = reader["Email"].ToString();
+                }
+                testCon.Close();
+                return this;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

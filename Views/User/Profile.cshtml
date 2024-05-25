@@ -1,0 +1,63 @@
+﻿@model ST10256859_CLDV6211_POE.Models.userTBL
+
+@{
+    ViewData["Title"] = "Profile";
+    var userID = ViewData["userID"];
+}
+
+<!DOCTYPE html>
+<head>
+    <title>Profile - KhumaloCraft Emporium</title>
+    <style>
+        .image {
+            border-radius: 25px;
+            height: 320px;
+            width: 400px;
+            margin: 15px;
+            border: 5px solid #FFFDD0;
+        }
+
+        .craftwork-item {
+            border-radius: 25px;
+            background-color: #1b2f48;
+            height: auto;
+            width: auto;
+            padding: 15px;
+            border: 5px solid #FFFDD0;
+            color: #FFFDD0;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+        }
+
+        .craftwork-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .text-content {
+            width: 970px;
+            margin-left: 15px;
+            overflow-wrap: break-word;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div style="height:80px;"></div>
+        <h1 align="center" style="color: #FFFDD0">Profile Page</h1>
+        <hr style="height:3px;color:#FFFDD0;border-width:0">
+        <div style="height:10px;"></div>
+        <div class="craftwork-container">
+            <div class="craftwork-item">
+                <h2 align="left" style="color: #FFFDD0">User Details</h2>
+                <div style="height:20px;"></div>
+                <p><b> Name:</b> @Model.FirstName </p>
+                <p><b> Surname:</b> @Model.LastName </p>
+                <p><b> Email:</b> @Model.Email </p>
+            </div>
+        </div>      
+    </div>
+</body>
+</html>

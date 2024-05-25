@@ -3,61 +3,78 @@
 <head>
     <title>Adding Products - KhumaloCraft Emporium</title>
     <style>
-        body {
+        body 
+        {
             background-color: #1b2f48;
             color: #FFFDD0;
+            font-family: Optician Sans;
         }
 
-        .craftwork-item {
+        .craftwork-item 
+        {
             border-radius: 25px;
             background-color: #1b2f48;
-            padding: 15px;
+            padding: 30px;
             border: 5px solid #FFFDD0;
             color: #FFFDD0;
-            max-width: 350px;
+            max-width: 700px;
             margin: auto;
         }
 
-            .craftwork-item input {
-                display: block;
-                width: 100%;
-                margin-bottom: 10px;
-                padding: 5px;
-                border-radius: 5px;
-                border: 1px solid #FFFDD0;
+            .craftwork-item form 
+            {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
             }
 
-            .craftwork-item button {
+            .craftwork-item input 
+            {
+                width: 300px;
+                margin-bottom: 20px;
+                padding: 10px;
+                border-radius: 5px;
+                border: 1px solid #FFFDD0;
+                box-sizing: border-box;
+            }
+
+                .craftwork-item input[type="file"] 
+                {
+                    width: 100%;
+                }
+
+            .craftwork-item button 
+            {
                 width: 100%;
                 padding: 10px;
                 border-radius: 5px;
                 border: solid;
                 border-color: #FFFDD0;
                 background-color: #333;
-                color: #1b2f48;
+                color: #FFFDD0;
                 cursor: pointer;
+                box-sizing: border-box;
             }
     </style>
 </head>
 
 <body>
-    <div style="height:80px;"></div>
-    <h1 align="center" style="color: #FFFDD0">Add Products to KhumaloCraft Emporium</h1>
-    <hr style="height:3px;color:#FFFDD0;border-width:0">
-    <div style="height:10px;"></div>
-    <p align="center">Please fill in the details below to add your product to KhumaloCraft Emporium.</p>
-    <div style="height:30px;"></div>
+    <div style="height:105px;"></div>
         <div class="craftwork-item">
+            <h2 align="center" style="color: #FFFDD0">Add Products to KhumaloCraft Emporium</h2>
+            <hr style="height:3px;color:#FFFDD0;border-width:0">
+            <div style="height:10px;"></div>
+            <p align="center">Please fill out the details below to sell your product on KhumaloCraft Emporium.</p>
+            <div style="height:10px;"></div>
             @model ST10256859_CLDV6211_POE.Models.productTBL
-
             <form action="ProductAdd" method="post" enctype="multipart/form-data">
-                <input type="text" name="Name" placeholder="Name of the Product" required>
-                <input type="text" name="Category" placeholder="Category of the Product" required>
-                <input type="text" name="Description" placeholder="Description of the Product" required>
-                <input type="text" name="Price" placeholder="Price of the Product" required>
-                <input type="text" name="Quantity" placeholder="Quantity of the Product" required>
+                <input type="text" name="Name" placeholder="Product Name" required>
+                <input type="text" name="Category" placeholder="Catergory" required>
+                <input type="text" name="Price" placeholder="Price" required>
+                <input type="text" name="Quantity" placeholder="Quantity" required>
+                <input style="width: 700px; height: 150px" type="text" name="Description" placeholder="Description" required>
                 <input type="file" name="ImageFile" placeholder="Image of the Product">
-            <button type="submit" style="color: #FFFDD0">Submit</button>
+            <button type="submit" style="color: #FFFDD0">Add Product</button>
             </form>
         </div>
     <br></br>

@@ -12,7 +12,7 @@
             border-radius: 25px;
             background-color: #1b2f48;
             padding: 15px;
-            border: 5px solid #FFFDD0;
+            border: 5px solid;
             color: #FFFDD0;
             max-width: 350px;
             margin: auto;
@@ -37,24 +37,40 @@
                 color: #1b2f48;
                 cursor: pointer;
             }
+
+            .craftwork-item button[name="SignUpButton"] {
+                    width: auto;
+                    padding: 1px;
+                    border: solid;
+                    border-color: #1b2f48;
+                    background-color: #1b2f48;
+                    color: #fff;
+                    cursor: pointer;
+                    text-align: center;
+            }
     </style>
 </head>
 
 <body>
-    <div style="height:80px;"></div>
-    <h1 align="center" style="color: #FFFDD0">Login</h1>
-    <hr style="height:3px;color:#FFFDD0;border-width:0">
-    <div style="height:10px;"></div>
-    <p align="center">Please login to your  KhumaloCraft Emporium account by entering your details below.</p>
-    <div style="height:30px;"></div>
-
+    <br></br>
+    <br></br>
     <div class="craftwork-item">
+        <h1 align="center" style="color: #FFFDD0">Login</h1>
+        <div style="height:20px;"></div>
         <form asp-controller="Login" asp-action="Login" method="post">
             <input type="text" name="Email" placeholder="Email" required>
+            <div style="height:30px;"></div>
             <input type="password" name="Password" placeholder="Password" required>
-            <button style="color: #FFFDD0" type="submit">Submit</button>
+            <div style="height:20px;"></div>
+            <button align="center" style="color: #FFFDD0" type="submit">Login</button>
+            <div style="height:30px;"></div>
+        </form>
+        <form asp-controller="User" asp-action="SignUp" method="get">
+            <div align="center">
+                <button style="color: #FFFDD0" type="submit" name="SignUpButton"><u>Sign Up</u></button>
+            </div>
         </form>
     </div>
-    </div>
+    <br></br>
 </body>
 </html>

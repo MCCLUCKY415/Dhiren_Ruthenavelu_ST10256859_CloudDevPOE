@@ -41,6 +41,22 @@ namespace ST10256859_CLDV6211_POE.Controllers
         {
             var products = prodTBL.GetAllProducts();
             ViewData["UserID"] = HttpContext.Session.GetInt32("UserID");
+
+            int? UserID = HttpContext.Session.GetInt32("UserID");
+            if (!UserID.HasValue)
+            {
+                return View(products);
+            }
+            userTBL user = new userTBL();
+            string FullName = user.GetFullName((int)UserID);
+
+            if (!string.IsNullOrEmpty(FullName))
+            {
+                ViewData["WelcomeMessage"] = $"~ Welcome, {FullName} ~";
+            }
+
+            ViewData["UserID"] = UserID.Value;
+
             return View(products);
         }
 
