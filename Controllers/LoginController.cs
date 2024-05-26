@@ -28,13 +28,13 @@ namespace ST10256859_CLDV6211_POE.Controllers
             }
             else
             {
-                return View("LoginFailed");
+                return View();
             }
         }
 
         public ActionResult Logout()
         {
-            Response.Cookies.Delete("UserID");
+            HttpContext.Session.Clear();
 
             return RedirectToAction("Index", "Home");
         }

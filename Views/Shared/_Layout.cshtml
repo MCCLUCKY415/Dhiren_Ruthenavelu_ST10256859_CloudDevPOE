@@ -79,10 +79,23 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="ProductAdd">Sell-a-Product</a>
                         </li>
                     </ul>
+                        @if (@ViewData["UserID"] != null)
+                        {
+                            <ul class="navbar-nav align-content-end">
+                                <li class="nav-item">
+                                    <a align="right" class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Logout">Logout</a>
+                                </li>
+                            </ul>
+                        }
+                        else
+                        {
+                            <ul class="navbar-nav align-content-end">
+                                <li class="nav-item">
+                                    <a align="right" class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Login">Login</a>
+                                </li>
+                            </ul>
+                        }
                     <ul class="navbar-nav align-content-end">
-                        <li class="nav-item">
-                            <a align="right" class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Login">Login</a>
-                        </li>
                         <li class="nav-item">
                             <a align="right" class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Profile">Profile</a>
                         </li>

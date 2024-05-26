@@ -27,6 +27,9 @@ namespace ST10256859_CLDV6211_POE.Controllers
         [HttpGet]
         public ActionResult ProductAdd()
         {
+
+            ViewData["UserID"] = HttpContext.Session.GetInt32("UserID");
+
             if (HttpContext.Session.GetInt32("UserID") == null)
             {
                 return RedirectToAction("Login", "User");

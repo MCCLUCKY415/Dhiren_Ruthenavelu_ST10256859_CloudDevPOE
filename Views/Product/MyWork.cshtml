@@ -147,13 +147,21 @@
                             <p><b> Category:</b> @product.Category </p>
                             <p><b> Description:</b> @product.Description </p>
                             <p><b> Price:</b> R @product.Price </p>
-                            <p><b> Quantity:</b> @product.Quantity </p>
-                            <form action="PlaceOrder" method="post">
-                                <input type="hidden" name="ProductID" value="@product.ProductID" />
-                                <div align="center">
-                                    <button class="button" type="submit" style="width:300px;color: #FFFDD0">Place Order</button>
-                                </div>
-                          </form>
+                            @if (product.Availability)
+                            {
+                                <p><b> Availability:</b> In Stock </p>
+
+                                <form action="PlaceOrder" method="post">
+                                    <input type="hidden" name="ProductID" value="@product.ProductID" />
+                                    <div align="center">
+                                        <button class="button" type="submit" style="width:300px;color: #FFFDD0">Place Order</button>
+                                    </div>
+                                </form>
+                            }
+                            else
+                            {
+                                <p><b> Availability:</b> <span style="color:#fe2725"> Out of Stock </span></p>
+                            }
                         </div> 
                     </div>
                 </div>

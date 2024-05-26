@@ -17,6 +17,7 @@ namespace ST10256859_CLDV6211_POE.Controllers
         [HttpGet]
         public ActionResult SignUp()
         {
+            ViewData["UserID"] = HttpContext.Session.GetInt32("UserID");
             return View();
         }
 
@@ -25,8 +26,14 @@ namespace ST10256859_CLDV6211_POE.Controllers
             return View();
         }
 
+        public ActionResult Logout()
+        {
+            return RedirectToAction("Index", "Home");
+        }
+
         public ActionResult Profile()
         {
+            ViewData["UserID"] = HttpContext.Session.GetInt32("UserID");
             if (HttpContext.Session.GetInt32("UserID") == null)
             {
                 return RedirectToAction("Login", "User");

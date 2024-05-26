@@ -16,16 +16,19 @@ namespace ST10256859_CLDV6211_POE_Part1.Controllers
 
         public IActionResult Index()
         {
+            ViewData["UserID"] = HttpContext.Session.GetInt32("UserID");
             return View();
         }
 
         public IActionResult AboutUs()
         {
+            ViewData["UserID"] = HttpContext.Session.GetInt32("UserID");
             return View();
         }
 
         public IActionResult ContactUs()
         {
+            ViewData["UserID"] = HttpContext.Session.GetInt32("UserID");
             return View();
         }
 

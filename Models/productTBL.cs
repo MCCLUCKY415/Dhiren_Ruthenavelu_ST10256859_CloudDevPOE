@@ -41,11 +41,6 @@ namespace ST10256859_CLDV6211_POE.Models
                 cmd.Parameters.AddWithValue("@Name", p.Name);
                 cmd.Parameters.AddWithValue("@Category", p.Category);
                 cmd.Parameters.AddWithValue("@Description", p.Description);
-                ////if statement to check if the price is less than 0 and an integer
-                //if (p.Price < 0 || !decimal.TryParse(p.Price.ToString(), out decimal price))
-                //{
-                //    throw new Exception("Price must be an actual price!");
-                //}
                 cmd.Parameters.AddWithValue("@Price", p.Price);
                 cmd.Parameters.AddWithValue("@Quantity", p.Quantity);
                 p.Availability = p.Quantity > 0;
