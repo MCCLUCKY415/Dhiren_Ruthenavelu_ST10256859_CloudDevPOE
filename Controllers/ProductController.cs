@@ -27,7 +27,14 @@ namespace ST10256859_CLDV6211_POE.Controllers
         [HttpGet]
         public ActionResult ProductAdd()
         {
-            return View();
+            if (HttpContext.Session.GetInt32("UserID") == null)
+            {
+                return RedirectToAction("Login", "User");
+            }
+            else
+            {
+                return View();
+            }
         }
 
         public ActionResult ProductGet(productTBL products)
@@ -75,6 +82,16 @@ namespace ST10256859_CLDV6211_POE.Controllers
                 byte[] imageData = System.IO.File.ReadAllBytes(path);
                 return File(imageData, "image/jpeg");
             }
+        }
+
+        [HttpPost]
+        public ActionResult PlaceOrder(int ProductId)
+        {
+            transactionTBL transaction = new transactionTBL();
+
+            int? UserID = HttpContext.Session.GetInt32("UserID");
+            var product = transaction.InsertOrder((int)UserID, ProductId);
+            return RedirectToAction("MyWork","Product");
         }
     }
 }

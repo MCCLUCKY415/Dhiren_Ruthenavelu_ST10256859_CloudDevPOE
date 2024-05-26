@@ -3,12 +3,14 @@
 <head>
     <title>Login - KhumaloCraft Emporium</title>
     <style>
-        body {
+        body 
+        {
             background-color: #1b2f48;
             color: #FFFDD0;
         }
 
-        .craftwork-item {
+        .craftwork-item 
+        {
             border-radius: 25px;
             background-color: #1b2f48;
             padding: 15px;
@@ -18,7 +20,8 @@
             margin: auto;
         }
 
-            .craftwork-item input {
+            .craftwork-item input 
+            {
                 display: block;
                 width: 100%;
                 margin-bottom: 10px;
@@ -27,7 +30,8 @@
                 border: 1px solid #FFFDD0;
             }
 
-            .craftwork-item button {
+            .craftwork-item button 
+            {
                 width: 100%;
                 padding: 10px;
                 border-radius: 5px;
@@ -35,10 +39,28 @@
                 border-color: #FFFDD0;
                 background-color: #333;
                 color: #1b2f48;
-                cursor: pointer;
+                transition: all 0.5s;
+                -webkit-transition: all 0.5s;
             }
 
-            .craftwork-item button[name="SignUpButton"] {
+            button:hover 
+            {
+            background-color: #35b0b5;
+                box-shadow: 0 0 20px #6fc5ff50;
+                transform: scale(1.0);
+            }
+
+            button:active 
+            {
+                background-color: #3d94cf;
+                transition: all 0.25s;
+                -webkit-transition: all 0.25s;
+                box-shadow: none;
+                transform: scale(0.98);
+            }
+
+            .craftwork-item button[name="SignUpButton"] 
+            {
                     width: auto;
                     padding: 1px;
                     border: solid;

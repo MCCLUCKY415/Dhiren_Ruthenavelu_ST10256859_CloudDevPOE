@@ -35,8 +35,23 @@
                 border-color: #FFFDD0;
                 background-color: #333;
                 color: #1b2f48;
-                cursor: pointer;
+                transition: all 0.5s;
+                -webkit-transition: all 0.5s;
             }
+
+        button:hover {
+            background-color: #35b0b5;
+            box-shadow: 0 0 20px #6fc5ff50;
+            transform: scale(1.0);
+        }
+
+        button:active {
+            background-color: #3d94cf;
+            transition: all 0.25s;
+            -webkit-transition: all 0.25s;
+            box-shadow: none;
+            transform: scale(0.98);
+        }
 
             .craftwork-item button[name="LoginButton"] {
                     width: auto;

@@ -11,8 +11,8 @@
         .image
         {
             border-radius: 25px;
-            height: 320px;
-            width: 400px;
+            height: 370px;
+            width: 430px;
             margin: 15px;
             border: 5px solid #FFFDD0;
         }
@@ -31,6 +31,19 @@
             align-content: center;
         }
 
+            .craftwork-item button 
+            {
+                width: 100%;
+                padding: 10px;
+                border-radius: 5px;
+                border: solid;
+                border-color: #FFFDD0;
+                background-color: #333;
+                color: #FFFDD0;
+                cursor: pointer;
+                box-sizing: border-box;
+            }
+
         .craftwork-content
         {
             display: flex;
@@ -43,6 +56,48 @@
             margin-left: 15px;
             overflow-wrap: break-word;
         }
+
+        .craftwork-item button {
+            padding: 1.1em 2em;
+            background: none;
+            border: 2px solid #fff;
+            font-size: 15px;
+            color: #131313;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+            border-radius: 12px;
+            background-color: #333;
+            font-weight: bolder;
+            box-shadow: 0 2px 0 2px #000;
+        }
+
+            .button:before {
+                content: "";
+                position: absolute;
+                width: 100px;
+                height: 120%;
+                background-color: #3e137c;
+                top: 50%;
+                transform: skewX(30deg) translate(-150%, -50%);
+                transition: all 0.5s;
+            }
+
+        .button:hover {
+            background-color: #2f9fa3;
+                color: #fff;
+                box-shadow: 0 2px 0 2px #0d3b66;
+            }
+
+            .button:hover::before {
+                    transform: skewX(30deg) translate(150%, -50%);
+                    transition-delay: 0.1s;
+                }
+
+        .button:active {
+                transform: scale(0.9);
+            }
     </style>
 </head>
 
@@ -93,7 +148,13 @@
                             <p><b> Description:</b> @product.Description </p>
                             <p><b> Price:</b> R @product.Price </p>
                             <p><b> Quantity:</b> @product.Quantity </p>
-                        </div>
+                            <form action="PlaceOrder" method="post">
+                                <input type="hidden" name="ProductID" value="@product.ProductID" />
+                                <div align="center">
+                                    <button class="button" type="submit" style="width:300px;color: #FFFDD0">Place Order</button>
+                                </div>
+                          </form>
+                        </div> 
                     </div>
                 </div>
             </div>

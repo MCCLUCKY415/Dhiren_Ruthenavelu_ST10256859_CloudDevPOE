@@ -27,9 +27,20 @@ namespace ST10256859_CLDV6211_POE.Controllers
 
         public ActionResult Profile()
         {
-            int? UserID = HttpContext.Session.GetInt32("UserID");
-            userTBL user = usrTBL.UserDetails((int)UserID);
-            return View(user);
+            if (HttpContext.Session.GetInt32("UserID") == null)
+            {
+                return RedirectToAction("Login", "User");
+            }
+            else
+            {
+                int? UserID = HttpContext.Session.GetInt32("UserID");
+                userTBL user = usrTBL.UserDetails((int)UserID);
+                transactionTBL transaction = new transactionTBL();
+                List<transactionTBL> orders = transaction.GetOrders((int)UserID);
+                ViewData["userDetails"] = user;
+                ViewData["orders"] = orders;
+                return View();
+            }
         }
     }
 }
