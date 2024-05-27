@@ -80,6 +80,13 @@
         <h1 align="center" style="color: #FFFDD0">Login</h1>
         <div style="height:20px;"></div>
         <form asp-controller="Login" asp-action="Login" method="post">
+            @if (!string.IsNullOrEmpty(TempData["Message"] as string))
+            {
+                <div style="color: #fe2725; text-align: center;">
+                    @TempData["Message"]
+                </div>
+                <div style="height:10px;"></div>
+            }
             <input type="text" name="Email" placeholder="Email" required>
             <div style="height:30px;"></div>
             <input type="password" name="Password" placeholder="Password" required>

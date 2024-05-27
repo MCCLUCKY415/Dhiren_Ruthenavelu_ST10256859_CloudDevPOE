@@ -88,7 +88,7 @@ namespace ST10256859_CLDV6211_POE.Controllers
         }
 
         [HttpPost]
-        public ActionResult PlaceOrder(int ProductId)
+        public async Task<ActionResult> PlaceOrder(int ProductId)
         {
             int? UserID = HttpContext.Session.GetInt32("UserID");
 
@@ -117,6 +117,7 @@ namespace ST10256859_CLDV6211_POE.Controllers
                     prodTBL.UpdateProduct(orderedProduct);
                 }
             }
+            await Task.Delay(5000);
 
             return RedirectToAction("MyWork");
         }

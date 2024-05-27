@@ -28,7 +28,10 @@ namespace ST10256859_CLDV6211_POE.Controllers
             }
             else
             {
-                return View();
+                var message = TempData["Message"] as string;
+            
+                TempData["Message"] = "Incorrect Email or Password. Please try again.";
+                return RedirectToAction("Login", "User");
             }
         }
 

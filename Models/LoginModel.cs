@@ -23,6 +23,10 @@ namespace ST10256859_CLDV6211_POE.Models
                     {
                         UserId = Convert.ToInt32(result);
                     }
+                    else
+                    {
+                        UserId = -1;
+                    }
                 }
                 catch (Exception ex)
                 {
