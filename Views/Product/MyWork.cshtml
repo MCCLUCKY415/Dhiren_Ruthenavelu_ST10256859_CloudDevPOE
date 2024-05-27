@@ -147,12 +147,12 @@
                             <p><b> Category:</b> @product.Category </p>
                             <p><b> Description:</b> @product.Description </p>
                             <p><b> Price:</b> R @product.Price </p>
+                            <p><b> Stock:</b> @product.Quantity </p>
                             @if (product.Availability)
                             {
                                 <p><b> Availability:</b> In Stock </p>
-
                                 <form action="PlaceOrder" method="post">
-                                    <input type="hidden" name="ProductID" value="@product.ProductID" />
+                                    <input type="hidden" name="ProductId" value="@product.ProductID" />
                                     <div align="center">
                                         <button class="button" type="submit" style="width:300px;color: #FFFDD0">Place Order</button>
                                     </div>

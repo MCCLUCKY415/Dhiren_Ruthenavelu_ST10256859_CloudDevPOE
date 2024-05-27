@@ -134,5 +134,25 @@ namespace ST10256859_CLDV6211_POE.Models
             }
             return product;
         }
+
+        public void UpdateProduct(productTBL product)
+        {
+            try
+            {
+                string sql = "UPDATE ProductTBL SET Quantity = @Quantity, Availability = @Availability WHERE ProductID = @ProductId";
+                SqlCommand cmd = new SqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@Quantity", product.Quantity);
+                cmd.Parameters.AddWithValue("@Availability", product.Quantity > 0);
+                cmd.Parameters.AddWithValue("@ProductId", product.ProductID);
+
+                con.Open();
+                int rowsAffected = cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
