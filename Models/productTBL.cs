@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data.SqlClient;
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
@@ -21,8 +22,10 @@ namespace ST10256859_CLDV6211_POE.Models
 
         public string Description { get; set; }
 
+        [Range(0.0, double.MaxValue, ErrorMessage = "Please enter a valid decimal Number")]
         public decimal Price { get; set; }
 
+        [Range(0, int.MaxValue, ErrorMessage = "Please enter a valid integer Number")]
         public int Quantity { get; set; }
 
         public bool Availability { get; set; }

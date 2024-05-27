@@ -1,9 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ST10256859_CLDV6211_POE.Models;
-using System.Collections.Generic;
-using System.IO;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 
 namespace ST10256859_CLDV6211_POE.Controllers
 {
@@ -27,7 +23,6 @@ namespace ST10256859_CLDV6211_POE.Controllers
         [HttpGet]
         public ActionResult ProductAdd()
         {
-
             ViewData["UserID"] = HttpContext.Session.GetInt32("UserID");
 
             if (HttpContext.Session.GetInt32("UserID") == null)
@@ -117,7 +112,7 @@ namespace ST10256859_CLDV6211_POE.Controllers
                     prodTBL.UpdateProduct(orderedProduct);
                 }
             }
-            await Task.Delay(5000);
+            await Task.Delay(2000);
 
             return RedirectToAction("MyWork");
         }

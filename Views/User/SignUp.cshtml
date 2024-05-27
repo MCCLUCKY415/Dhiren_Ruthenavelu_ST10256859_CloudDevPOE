@@ -76,9 +76,9 @@
             <div style="height:20px;"></div>
             <input type="text" name="LastName" placeholder="Surname" required>
             <div style="height:20px;"></div>
-            <input type="text" name="Email" placeholder="Email" required>
+            <input type="email" name="Email" placeholder="Email" required>
             <div style="height:20px;"></div>
-            <input type="password" name="Password" placeholder="Password" required>
+            <input type="password" name="Password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
             <div style="height:20px;"></div>
             <button style="color: #FFFDD0" type="submit">Sign Up</button>
             <div style="height:20px;"></div>
