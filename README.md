@@ -1,4 +1,4 @@
-# ST10256859_CLDV6211_POE_Part2
+# ST10256859_CLDV6211_POE_Final
 ST10256859 - Dhiren Ruthenavelu
 
 This project is a web application developed in ASP.NET Core. It's an e-commerce platform where users can browse and purchase products.
